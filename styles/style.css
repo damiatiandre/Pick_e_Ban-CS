@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+body {
+    color: #fff;
+    background-image: url("../img/cswallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 32px;
+}
+
+header {
+    font-size: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+header span {
+    color: #1EB720;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+.line {
+    flex-grow: 1;
+    border: 2px solid #1EB720;
+}
+
+.match h1 {
+    padding: 16px;
+}
+
+.picks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto; 
+}
+
+.card {
+    border: #fff 2px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    min-height: 350px;
+}
+
+.card::before {
+    content: "";
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.card:hover {
+    border: 6px solid #E22859;
+}
+
+.card:hover .accept {
+    opacity: 1;
+}
+
+.card:hover .check {
+    opacity: 1;
+}
+
+.card:hover {
+    border: 6px solid #E22859;
+}
+
+.card.de_inferno::before {
+    background-image: url('../img/inferno.jpeg');
+}
+
+.card.de_anubis::before {
+    background-image: url('../img/anubis.jpeg');
+}
+
+.card.de_ancient::before {
+    background-image: url('../img/ancient.jpeg');
+}
+
+.card.de_mirage::before {
+    background-image: url('../img/mirage.jpeg');
+}
+
+.card.de_nuke::before {
+    background-image: url('../img/nuke.jpeg');
+}
+
+.card.de_cache::before {
+    background-image: url('../img/cache.jpeg');
+}
+
+.card.de_dust2::before {
+    background-image: url('../img/dust2.jpeg');
+}
+
+.card.de_overpass::before {
+    background-image: url('../img/overpass.jpeg');
+}
+
+.card.de_vertigo::before {
+    background-image: url('../img/vertigo.jpeg');
+}
+
+.card.de_cache::before {
+    background-image: url('../img/cache.jpeg');
+}
+
+.card.de_train::before {
+    background-image: url('../img/train.jpeg');
+}
+
+.card.de_cobblestone::before {
+    background-image: url('../img/cobble.jpeg');
+}
+
+.accept {
+    background-color: #E22859;
+    height: 40px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.check {
+    align-items: center;
+    background-color: #E22859;
+    border-radius: 50%;
+    display: flex;
+    font-size: 42px;
+    height: 60px;
+    justify-content: center;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+    width: 60px;
+}
+
+.check i {
+    color: #fff;
+}
+
+.map-name {
+    bottom: 0;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+}
+
+.map-name h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px #111;
+}
+
+.selected::before {
+    filter: grayscale(1);
+}
+
+.selected{
+    border: 6px solid #E22859;
+    cursor: not-allowed;
+    overflow: hidden;
+}
+
+.selected::before {
+    filter: grayscale(1);
+}
+
+.selected .accept, .selected .check {
+    opacity: 1;
+}
+
+.picked  {
+    border: 6px solid #1EB720;
+}
+
+.card.picked.disable-hover:hover {
+    border: 6px solid #1EB720;
+    cursor: default;
+}
+
+.card.picked.disable-hover:hover .check {
+    opacity: 0;
+}
+
+.card.picked.disable-hover:hover .accept {
+    opacity: 0;
+}
